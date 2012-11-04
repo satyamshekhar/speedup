@@ -41,7 +41,7 @@ assert(ll.elementAt(0) === 4 &&
 
 assert(ll.indexOf(56) === 2);
 assert(ll.lastIndexOf(100) === 4);
-assert(!ll.empty());
+assert(!ll.isEmpty());
 ll.clear();
-assert(ll.empty());
+assert(ll.isEmpty());
 assert(ll.size === 0);

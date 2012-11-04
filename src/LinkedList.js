@@ -117,7 +117,7 @@ LinkedList.prototype.lastIndexOf = function (obj) {
     return -1;
 };
 
-LinkedList.prototype.empty = function () {
+LinkedList.prototype.isEmpty = function () {
     return this._size === 0;
 };
 
