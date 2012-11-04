@@ -2,9 +2,8 @@ var Stack = module.exports = function () {
     this._stack = [];
 };
 
-Stack.prototype.push = function () {
-    for (var i = 0, l = arguments.length; i < l; i++)
-        this._stack.push(arguments[i]);
+Stack.prototype.push = function (element) {
+    this._stack.push(element);
     return this._stack.length;
 };
 

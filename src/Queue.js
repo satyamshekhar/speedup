@@ -3,9 +3,8 @@ var Queue = module.exports = function () {
     this._reversed_stack = [];
 };
 
-Queue.prototype.push = function () {
-    for (var i = 0, l = arguments.length; i < l; i++)
-        this._stack.push(arguments[i]);
+Queue.prototype.push = function (element) {
+    this._stack.push(element);
     return this.size;
 };
 
