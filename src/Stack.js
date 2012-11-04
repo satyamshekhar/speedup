@@ -3,21 +3,24 @@ var Stack = module.exports = function () {
 };
 
 Stack.prototype.push = function (element) {
-    this._stack.push(element);
-    return this._stack.length;
+    return this._stack.push(element);
 };
 
 Stack.prototype.pop = function () {
     return this._stack.pop();
 };
 
-Stack.prototype.empty = function () {
+Stack.prototype.isEmpty = function () {
     return this._stack.length === 0;
 };
 
 Stack.prototype.clear = function () {
     delete this._stack;
     this._stack = [];
+};
+
+Stack.prototype.peek = function () {
+    return this._stack[this._stack.length - 1];
 };
 
 Stack.prototype.foreach = function (Fn) {
@@ -38,8 +41,4 @@ Stack.prototype.toArray = function () {
 
 Stack.prototype.__defineGetter__('size', function () {
     return this._stack.length;
-});
-
-Stack.prototype.__defineGetter__('top', function () {
-    return this._stack[this._stack.length - 1];
 });
