@@ -9,6 +9,12 @@ var LinkedList = module.exports = function LinkedList() {
 var Node = exports.Node = function Node(obj) {
     this._prev = null;
     this._next = null;
+    this.__defineGetter__("prev", function () {
+        return this._prev;
+    });
+    this.__defineGetter__("next", function () {
+        return this._next;
+    });
     this.data = obj;
 };
 
