@@ -1,12 +1,19 @@
 var assert = require("assert").ok;
 
-var swap = function (A, i, j) {
-    var x = A[i];
-    A[i] = A[j];
-    A[j] = x;
+var swap = function (arr, i, j) {
+    var x = arr[i];
+    arr[i] = arr[j];
+    arr[j] = x;
 };
 
 // Default operator <
+// way faster than a function call in js.
+// every function call becomes a load and store in register,
+// which is very expensive.
+
+// For convenience, you can over ride that but performance won't
+// be as fast.
+
 // if typeof comparator === Fn, then Fn(a) < Fn(b)
 // if typeof comparator === key, then a.key < b.key
 var Heap = module.exports = function Heap(arity) {
