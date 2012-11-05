@@ -23,15 +23,15 @@ Stack.prototype.peek = function () {
     return this._stack[this._stack.length - 1];
 };
 
-Stack.prototype.foreach = function (Fn) {
+Stack.prototype.foreach = function (fn) {
     for (var i = 0, l = this._stack.length; i < l; i++) {
-        Fn(this._stack[i]);
+        fn(this._stack[i]);
     }
 };
 
-Stack.prototype.map = function (Fn) {
+Stack.prototype.map = function (fn) {
     for (var i = 0, l = this._stack.length; i < l; i++) {
-        this._stack[i] = Fn(this._stack[i]);
+        this._stack[i] = fn(this._stack[i]);
     }
 };
 

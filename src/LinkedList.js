@@ -34,30 +34,30 @@ LinkedList.prototype.insert = function (obj, index) {
     if (index === 0) {
         return this.insertBefore(node, this._head);
     } else {
-        var prevNode = this.nodeAt(index - 1);
-        return this.insertAfter(node, prevNode);
+        var prev_node = this.nodeAt(index - 1);
+        return this.insertAfter(node, prev_node);
     }
 };
 
-LinkedList.prototype.insertAfter = function (obj, prevNode) {
+LinkedList.prototype.insertAfter = function (obj, prev_node) {
     var node = this._createNodeIfNot(obj);
-    assert(prevNode && prevNode.constructor === Node);
-    if (prevNode === this._tail) this._tail = node;
-    node._next = prevNode._next;
-    node._prev = prevNode;
-    prevNode._next = node;
+    assert(prev_node && prev_node.constructor === Node);
+    if (prev_node === this._tail) this._tail = node;
+    node._next = prev_node._next;
+    node._prev = prev_node;
+    prev_node._next = node;
     if (node._next) node._next._prev = node;
     ++this._size;
     return node;
 };
 
-LinkedList.prototype.insertBefore = function (obj, nextNode) {
+LinkedList.prototype.insertBefore = function (obj, next_node) {
     var node = this._createNodeIfNot(obj);
-    assert(nextNode && nextNode.constructor === Node);
-    if (nextNode === this._head) this._head = node;
-    node._next = nextNode;
-    node._prev = nextNode._prev;
-    nextNode._prev = node;
+    assert(next_node && next_node.constructor === Node);
+    if (next_node === this._head) this._head = node;
+    node._next = next_node;
+    node._prev = next_node._prev;
+    next_node._prev = node;
     if (node._prev) node._prev._next = node;
     ++this._size;
     return node;
