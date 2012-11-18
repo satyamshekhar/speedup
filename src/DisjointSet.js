@@ -1,36 +1,3 @@
-var DisjointSets = module.exports.DisjointSets = function () {
-    this._sets = {};
-    this._key = 1;
-};
-
-DisjointSets.prototype.makeSet = function (x) {
-    var set = new Set(x);
-    set._key = this._key;
-    this._sets[this._key] = set;
-    ++this._key;
-    return set;
-};
-
-DisjointSets.prototype.deleteSet = function (x) {
-    if (Object.hasOwnProperty(this._sets, x._key)) {
-        delete this._sets[x._key];
-        return true;
-    }
-    return false;
-};
-
-DisjointSets.prototype.countSets = function () {
-    return Object.keys(this._uniqueSets).length;
-};
-
-DisjointSets.prototype.mergeSets = function (set1, set2) {
-    var union = set1.union(set2);
-    if (set1 === union) delete this._sets[set2._key];
-    else delete this._sets[set2._key];
-};
-
-DisjointSets.prototype.union = this.mergeSets;
-
 var Set = exports.DisjointSet = function (data) {
     this.data = data;
 
