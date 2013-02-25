@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>speedup by satyamshekhar</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/satyamshekhar/speedup">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/satyamshekhar/speedup/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/satyamshekhar/speedup/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>speedup</h1>
+          <p>Speed up your javascript.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/satyamshekhar">satyamshekhar</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h3>API</h3>
+
+<h4>1.  Stack/LIFO [Link]</h4>
+
+<h5>Usage</h5>
+
+<pre><code>  var Stack = require('speedup').Stack;
+  var stack = new Stack();
+</code></pre>
+
+<h5>Methods</h5>
+
+<ul>
+<li><p><code>stack.push(element) - O(1)</code><br>
+Inserts the given argument |element| at the top of the stack and returns the number of the elements on the stack after inserting |element|.</p></li>
+<li><p><code>stack.pop() - O(1)</code><br>
+Removes and returns the element at the top of the stack, or undefined if the stack is empty.</p></li>
+<li><p><code>stack.size() - O(1)</code><br>
+Returns the number of elements on the stack..</p></li>
+<li><p><code>stack.empty() - O(1)</code><br>
+Returns true if the stack contains no element, false otherwise.</p></li>
+<li><p><code>stack.clear() - O(1)</code><br>
+Clears all elements from the stack. Returns void.</p></li>
+<li><p><code>stack.peek() - O(1)</code><br>
+Returns the element at the top of the stack if the stack is not empty, undefined otherwise.</p></li>
+<li><p><code>foreach(fn) - O(N)</code><br>
+|fn| should be a function that takes one argument. Executes the function |fn| on each element on the stack in the order they will be popped from the stack. Returns void.</p></li>
+<li><p><code>map(fn) - O(N)</code><br>
+|fn| should be a function that takes one argument. Maps each element on the stack to the value returned by the function |fn|, when it is executed with that element as its argument. The order of execution is as foreach. Returns void.</p></li>
+<li><p><code>toArray() - O(N)</code><br>
+Returns all the elements on the stack in an array. The elements are ordered by the order of their insertion.</p></li>
+</ul><h4>2. Queue/FIFO [Link]</h4>
+
+<h5>Usage:</h5>
+
+<pre><code>  var Queue = require('speedup').Queue;
+  var queue = new Queue;
+  queue.enqueue(3);
+  queue.enqueue(4);
+  queue.dequeue();  // Returns 3.
+</code></pre>
+
+<h5>Methods:</h5>
+
+<ul>
+<li><p><code>queue.enqueue(element) - O(1)</code><br>
+Inserts |element| at the back of the queue. Returns the number of elements in the queue after inserting |element|.</p></li>
+<li><p><code>queue.dequeue() - amortized O(1)</code><br>
+Removes and returns the element at the back of the queue. </p></li>
+<li><p><code>queue.size() - O(1)</code><br>
+Returns the number of elements in the queue.</p></li>
+<li><p><code>queue.empty() - O(1)</code><br>
+Returns true if the queue contains no element, false otherwise.</p></li>
+<li><p><code>clear() - O(1)</code><br>
+Clears all elements from the queue.</p></li>
+<li><p><code>peek() - O(1)</code><br>
+Returns the element at the front of the queue if the queue is not empty, undefined otherwise.</p></li>
+<li><p><code>foreach(fn) - O(N)</code><br>
+|fn| should be a function that takes one argument. Executes the function |fn| on each element in the queue in the order they will be dequeued from the queue. Returns void.</p></li>
+<li><p><code>map(fn) - O(N)</code><br>
+|fn| should be a function that takes one argument. Maps each element in the queue to the value returned by the function |fn|, when it is executed with that element as its argument. The order of execution is as foreach. Returns void.</p></li>
+<li><p><code>toArray() - O(N)</code><br>
+Returns all the elements on the stack in an array. The elements are ordered by the order of their insertion.</p></li>
+</ul>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
