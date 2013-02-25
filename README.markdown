@@ -7,36 +7,33 @@
   var stack = new Stack();
 ```
 
-##### Description
-A LIFO queue.
-
 ##### Methods
- *  `stack.push(element)`  
-    Inserts the given argument |element| at the top of the stack and returns the number of the elements on the stack after inserting |element|. Complexity - O(1).
+*   `stack.push(element) - O(1)`  
+    Inserts the given argument |element| at the top of the stack and returns the number of the elements on the stack after inserting |element|.
 
- *  `stack.pop()`  
-    Removes and returns the element at the top of the stack, or undefined if the stack is empty. Complexity - O(1).
+*  `stack.pop() - O(1)`  
+    Removes and returns the element at the top of the stack, or undefined if the stack is empty.
 
-*  `stack.size()`
-    Returns the number of elements on the stack. Complexity - O(1).
+*  `stack.size() - O(1)`  
+    Returns the number of elements on the stack..
 
-*  `stack.empty()`
-    Returns true if the stack contains no element, false otherwise. Complexity - O(1).
+*  `stack.empty() - O(1)`  
+    Returns true if the stack contains no element, false otherwise.
 
-*  `stack.clear()`
-    Clears all elements from the stack. Returns void. Complexity - O(1).
+*  `stack.clear() - O(1)`  
+    Clears all elements from the stack. Returns void.
 
-*  `stack.peek()`
-    Returns the element at the top of the stack if the stack is not empty, undefined otherwise. Complexity - O(1).
+*  `stack.peek() - O(1)`  
+    Returns the element at the top of the stack if the stack is not empty, undefined otherwise.
 
-*  `foreach(fn)`
-    |fn| should be a function that takes one argument. Executes the function |fn| on each element on the stack in the order they will be popped from the stack. Returns void. Complexity - O(N).
+*  `foreach(fn) - O(N)`  
+    |fn| should be a function that takes one argument. Executes the function |fn| on each element on the stack in the order they will be popped from the stack. Returns void.
 
-*  `map(fn)`
-    |fn| should be a function that takes one argument. Maps each element on the stack to the value returned by the function |fn|, when it is executed with that element as its argument. The order of execution is as foreach. Returns void. Complexity - O(N).
+*  `map(fn) - O(N)`  
+    |fn| should be a function that takes one argument. Maps each element on the stack to the value returned by the function |fn|, when it is executed with that element as its argument. The order of execution is as foreach. Returns void.
 
-*  `toArray()`
-    Returns all the elements on the stack in an array. The elements are ordered by the order of their insertion. Complexity - O(N).
+*  `toArray() - O(N)`  
+    Returns all the elements on the stack in an array. The elements are ordered by the order of their insertion.
 
 #### 2. Queue/FIFO [Link]
 
@@ -49,42 +46,33 @@ A LIFO queue.
   queue.dequeue();  // Returns 3.
 ```
 
-#### Methods:
+##### Methods:
 
-* **enqueue(element)**
-  Inserts |element| at the back of the queue. Returns the number of elements in the queue after inserting |element|. <br/>
-  Complexity - O(1)
+* `queue.enqueue(element) - O(1)`  
+  Inserts |element| at the back of the queue. Returns the number of elements in the queue after inserting |element|.
+ 
+* `queue.dequeue() - amortized O(1)`  
+  Removes and returns the element at the back of the queue. 
 
-* **dequeue()**
-  Removes and returns the element at the back of the queue. <br/>
-  Complexity - Amortized O(1)
+* `queue.size() - O(1)`  
+  Returns the number of elements in the queue.
 
-* **size()**
-  Returns the number of elements in the queue. <br/>
-  Complexity - O(1)
+* `queue.empty() - O(1)`  
+  Returns true if the queue contains no element, false otherwise.
 
-* **empty()**
-  Returns true if the queue contains no element, false otherwise. <br/>
-  Complexity - O(1)
+* `clear() - O(1)`  
+  Clears all elements from the queue.
 
-* **clear()**
-  Clears all elements from the queue. <br/>
-  Complexity - O(1)
+* `peek() - O(1)`  
+  Returns the element at the front of the queue if the queue is not empty, undefined otherwise.
 
-* **peek()**
-  Returns the element at the front of the queue if the queue is not empty, undefined otherwise. <br/>
-  Complexity - O(1)
+* `foreach(fn) - O(N)`  
+  |fn| should be a function that takes one argument. Executes the function |fn| on each element in the queue in the order they will be dequeued from the queue. Returns void.
 
-* **foreach(fn)**
-  |fn| should be a function that takes one argument. Executes the function |fn| on each element in the queue in the order they will be dequeued from the queue. Returns void. <br/>
-  Complexity - O(N)
+* `map(fn) - O(N)`  
+  |fn| should be a function that takes one argument. Maps each element in the queue to the value returned by the function |fn|, when it is executed with that element as its argument. The order of execution is as foreach. Returns void.
 
-* **map(fn)**
-  |fn| should be a function that takes one argument. Maps each element in the queue to the value returned by the function |fn|, when it is executed with that element as its argument. The order of execution is as foreach. Returns void. <br/>
-  Complexity - O(N)
-
-* **toArray()**
-  Returns all the elements on the stack in an array. The elements are ordered by the order of their insertion. <br/>
-  Complexity - O(N)
+* `toArray() - O(N)`  
+  Returns all the elements on the stack in an array. The elements are ordered by the order of their insertion.
 
 
