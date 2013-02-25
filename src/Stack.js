@@ -10,7 +10,11 @@ Stack.prototype.pop = function () {
     return this._stack.pop();
 };
 
-Stack.prototype.isEmpty = function () {
+Stack.prototype.size = function () {
+    return this._stack.length;
+};
+
+Stack.prototype.empty = function () {
     return this._stack.length === 0;
 };
 
@@ -24,13 +28,13 @@ Stack.prototype.peek = function () {
 };
 
 Stack.prototype.foreach = function (fn) {
-    for (var i = 0, l = this._stack.length; i < l; i++) {
+    for (var i = this._stack.length - 1; i >= 0; --i) {
         fn(this._stack[i]);
     }
 };
 
 Stack.prototype.map = function (fn) {
-    for (var i = 0, l = this._stack.length; i < l; i++) {
+    for (var i =  this._stack.length - 1; i >= 0; --i) {
         this._stack[i] = fn(this._stack[i]);
     }
 };
@@ -38,7 +42,3 @@ Stack.prototype.map = function (fn) {
 Stack.prototype.toArray = function () {
     return this._stack.slice();
 };
-
-Stack.prototype.__defineGetter__('size', function () {
-    return this._stack.length;
-});
