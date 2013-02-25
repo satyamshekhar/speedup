@@ -1,0 +1,30 @@
+{
+    "name": "speedup",
+    "version": "0.1.0",
+    "main": "./speedup.js",
+    "description": "An efficient data structures library for javascript.",
+    "author": "Satyam Shekhar",
+    "dependencies": {
+    },
+    "devDependencies": {
+    },
+    "repositories": [{
+            "type": "git",
+            "path": "git://github.com/satyamshekhar/speedup.git"
+    }],
+    "homepage": "https://github.com/satyamshekhar/speedup",
+    "bugs": "https://github.com/satyamshekhar/speedup/issues",
+    "maintainers": [{
+      "name": "Satyam Shekhar",
+      "email": "satyamshekhar@gmail.com",
+      "web": "http://satyamshekhar.com/"
+    }],
+  "contributors": [
+  ],
+  "licenses": [{
+      "type": "MIT"
+    }],
+  "engines": {
+    "node": ">=0.6.12"
+  }
+}
