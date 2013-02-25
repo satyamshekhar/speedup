@@ -1,3 +1,5 @@
+// Improve dequeue from amortized O(1) to O(1).
+
 var Queue = module.exports = function () {
     this._stack = [];
     this._reversed_stack = [];
@@ -5,21 +7,22 @@ var Queue = module.exports = function () {
 
 Queue.prototype.enqueue = function (element) {
     this._stack.push(element);
-    return this.size;
+    return this.size();
 };
 
 Queue.prototype.dequeue = function () {
-    this._pushToReverseStack();
+    if (this._reversed_stack.length === 0) {
+        this._reverseStack();
+    }
     return this._reversed_stack.pop();
 };
 
-Queue.prototype.isEmpty = function () {
-    return this.size === 0;
+Queue.prototype.size = function () {
+    return this._reversed_stack.length + this._stack.length;
 };
 
-Queue.prototype.toArray = function () {
-    this._pushToReverseStack();
-    return this._reversed_stack.slice();
+Queue.prototype.empty = function () {
+    return this.size() === 0;
 };
 
 Queue.prototype.clear = function () {
@@ -37,12 +40,32 @@ Queue.prototype.peek = function () {
     }
 };
 
-Queue.prototype.__defineGetter__("size", function () {
-    return this._reversed_stack.length + this._stack.length;
-});
+Queue.prototype.foreach = function () {
+    for (var i = this._reversed_stack.length - 1; i >= 0; --i) {
+        fn(this._reversed_stack[i]);
+    }
+    for (var i = 0, l = this._stack.length; i < l; ++i) {
+        fn(this._stack[i]);
+    }
+};
+
+Queue.prototype.map = function () {
+    for (var i = this._reversed_stack.length - 1; i >= 0; --i) {
+        this._reversed_stack[i] = fn(this._reversed_stack[i]);
+    }
+    for (var i = 0, l = this._stack.length; i < l; ++i) {
+        this_stack[i] = fn(this._stack[i]);
+    }
+}
+
+Queue.prototype.toArray = function () {
+    var array = [].concat()
+    return this._reversed_stack.slice();
+};
+
 
 // Private Functions
-Queue.prototype._pushToReverseStack = function () {
-    this._reversed_stack = this._reversed_stack.concat(this._stack.reverse());
+Queue.prototype._reverseStack = function () {
+    this._reversed_stack = this._stack.reverse();
     this._stack = [];
 };
