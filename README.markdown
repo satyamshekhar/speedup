@@ -1,0 +1,90 @@
+### API
+
+#### 1.  Stack/LIFO [Link]
+##### Usage
+```
+  var Stack = require('speedup').Stack;
+  var stack = new Stack();
+```
+
+##### Description
+A LIFO queue.
+
+##### Methods
+ *  `stack.push(element)`  
+    Inserts the given argument |element| at the top of the stack and returns the number of the elements on the stack after inserting |element|. Complexity - O(1).
+
+ *  `stack.pop()`  
+    Removes and returns the element at the top of the stack, or undefined if the stack is empty. Complexity - O(1).
+
+*  `stack.size()`
+    Returns the number of elements on the stack. Complexity - O(1).
+
+*  `stack.empty()`
+    Returns true if the stack contains no element, false otherwise. Complexity - O(1).
+
+*  `stack.clear()`
+    Clears all elements from the stack. Returns void. Complexity - O(1).
+
+*  `stack.peek()`
+    Returns the element at the top of the stack if the stack is not empty, undefined otherwise. Complexity - O(1).
+
+*  `foreach(fn)`
+    |fn| should be a function that takes one argument. Executes the function |fn| on each element on the stack in the order they will be popped from the stack. Returns void. Complexity - O(N).
+
+*  `map(fn)`
+    |fn| should be a function that takes one argument. Maps each element on the stack to the value returned by the function |fn|, when it is executed with that element as its argument. The order of execution is as foreach. Returns void. Complexity - O(N).
+
+*  `toArray()`
+    Returns all the elements on the stack in an array. The elements are ordered by the order of their insertion. Complexity - O(N).
+
+#### 2. Queue/FIFO [Link]
+
+##### Usage:
+```
+  var Queue = require('speedup').Queue;
+  var queue = new Queue;
+  queue.enqueue(3);
+  queue.enqueue(4);
+  queue.dequeue();  // Returns 3.
+```
+
+#### Methods:
+
+* **enqueue(element)**
+  Inserts |element| at the back of the queue. Returns the number of elements in the queue after inserting |element|. <br/>
+  Complexity - O(1)
+
+* **dequeue()**
+  Removes and returns the element at the back of the queue. <br/>
+  Complexity - Amortized O(1)
+
+* **size()**
+  Returns the number of elements in the queue. <br/>
+  Complexity - O(1)
+
+* **empty()**
+  Returns true if the queue contains no element, false otherwise. <br/>
+  Complexity - O(1)
+
+* **clear()**
+  Clears all elements from the queue. <br/>
+  Complexity - O(1)
+
+* **peek()**
+  Returns the element at the front of the queue if the queue is not empty, undefined otherwise. <br/>
+  Complexity - O(1)
+
+* **foreach(fn)**
+  |fn| should be a function that takes one argument. Executes the function |fn| on each element in the queue in the order they will be dequeued from the queue. Returns void. <br/>
+  Complexity - O(N)
+
+* **map(fn)**
+  |fn| should be a function that takes one argument. Maps each element in the queue to the value returned by the function |fn|, when it is executed with that element as its argument. The order of execution is as foreach. Returns void. <br/>
+  Complexity - O(N)
+
+* **toArray()**
+  Returns all the elements on the stack in an array. The elements are ordered by the order of their insertion. <br/>
+  Complexity - O(N)
+
+
