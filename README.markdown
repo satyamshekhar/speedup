@@ -1,10 +1,13 @@
 ### API
 
-#### 1.  Stack/LIFO [Link]
+#### 1.  Stack
 ##### Usage
 ```
   var Stack = require('speedup').Stack;
   var stack = new Stack();
+  stack.push(3);
+  stack.push(4);
+  stack.pop();  // Returns 4.
 ```
 
 ##### Methods
@@ -23,19 +26,19 @@
 *  `stack.clear() - O(1)`  
     Clears all elements from the stack. Returns void.
 
-*  `stack.peek() - O(1)`  
+*  `stack.top() - O(1)`  
     Returns the element at the top of the stack if the stack is not empty, undefined otherwise.
 
-*  `foreach(fn) - O(N)`  
+*  `stack.forEach(fn) - O(N)`  
     |fn| should be a function that takes one argument. Executes the function |fn| on each element on the stack in the order they will be popped from the stack. Returns void.
 
-*  `map(fn) - O(N)`  
+*  `stack.map(fn) - O(N)`  
     |fn| should be a function that takes one argument. Maps each element on the stack to the value returned by the function |fn|, when it is executed with that element as its argument. The order of execution is as foreach. Returns void.
 
-*  `toArray() - O(N)`  
+*  `stack.toArray() - O(N)`  
     Returns all the elements on the stack in an array. The elements are ordered by the order of their insertion.
 
-#### 2. Queue/FIFO [Link]
+#### 2. Queue
 
 ##### Usage:
 ```
@@ -60,19 +63,19 @@
 * `queue.empty() - O(1)`  
   Returns true if the queue contains no element, false otherwise.
 
-* `clear() - O(1)`  
+* `queue.clear() - O(1)`  
   Clears all elements from the queue.
 
-* `peek() - O(1)`  
+* `queue.front() - O(1)`  
   Returns the element at the front of the queue if the queue is not empty, undefined otherwise.
 
-* `foreach(fn) - O(N)`  
+* `queue.forEach(fn) - O(N)`  
   |fn| should be a function that takes one argument. Executes the function |fn| on each element in the queue in the order they will be dequeued from the queue. Returns void.
 
-* `map(fn) - O(N)`  
+* `queue.map(fn) - O(N)`  
   |fn| should be a function that takes one argument. Maps each element in the queue to the value returned by the function |fn|, when it is executed with that element as its argument. The order of execution is as foreach. Returns void.
 
-* `toArray() - O(N)`  
+* `queue.toArray() - O(N)`  
   Returns all the elements on the stack in an array. The elements are ordered by the order of their insertion.
 
 
