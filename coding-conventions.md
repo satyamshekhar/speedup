@@ -1,4 +1,5 @@
-# variables - _ seperated name
-# Functions - Camel case names, with first letter small.
-# _ to represent private variables.
-# Class name to start with capital letters, Camel case.
+Follow [google style guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml) with the following 
+exceptions:
+
++ the variable names are _ separated.
++ leading _ to represent private variables.
