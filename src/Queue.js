@@ -32,7 +32,7 @@ Queue.prototype.clear = function () {
     this._reversed_stack = [];
 };
 
-Queue.prototype.peek = function () {
+Queue.prototype.front = function () {
     if (this._reversed_stack.length === 0) {
         return this._stack[0];
     } else {
@@ -40,7 +40,7 @@ Queue.prototype.peek = function () {
     }
 };
 
-Queue.prototype.foreach = function () {
+Queue.prototype.forEach = function () {
     for (var i = this._reversed_stack.length - 1; i >= 0; --i) {
         fn(this._reversed_stack[i]);
     }

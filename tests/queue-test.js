@@ -7,13 +7,13 @@ for (var i = 1; i < 5; i++)
 
 assert(q.enqueue(5) === 5);
 
-assert(q.peek() === 1);
+assert(q.front() === 1);
 
 assert(q.dequeue() === 1);
 assert(!q.empty());
 
 assert(q.size() === 4);
-assert(q.peek() === 2);
+assert(q.front() === 2);
 
 q.enqueue(6);
 q.enqueue(9);

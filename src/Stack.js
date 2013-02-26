@@ -23,11 +23,11 @@ Stack.prototype.clear = function () {
     this._stack = [];
 };
 
-Stack.prototype.peek = function () {
+Stack.prototype.top = function () {
     return this._stack[this._stack.length - 1];
 };
 
-Stack.prototype.foreach = function (fn) {
+Stack.prototype.forEach = function (fn) {
     for (var i = this._stack.length - 1; i >= 0; --i) {
         fn(this._stack[i]);
     }
