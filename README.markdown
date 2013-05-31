@@ -12,10 +12,12 @@
 
 ##### Methods
 *   `stack.push(element) - O(1)`  
-    Inserts the given argument |element| at the top of the stack and returns the number of the elements on the stack after inserting |element|.
+    Inserts the given argument |element| at the top of the stack and returns the
+    number of the elements on the stack after inserting |element|.
 
 *  `stack.pop() - O(1)`  
-    Removes and returns the element at the top of the stack, or undefined if the stack is empty.
+    Removes and returns the element at the top of the stack, or undefined if the
+    stack is empty.
 
 *  `stack.size() - O(1)`  
     Returns the number of elements on the stack..
@@ -27,16 +29,23 @@
     Clears all elements from the stack. Returns void.
 
 *  `stack.top() - O(1)`  
-    Returns the element at the top of the stack if the stack is not empty, undefined otherwise.
+    Returns the element at the top of the stack if the stack is not empty, 
+    undefined otherwise.
 
 *  `stack.forEach(fn) - O(N)`  
-    |fn| should be a function that takes one argument. Executes the function |fn| on each element on the stack in the order they will be popped from the stack. Returns void.
+    |fn| should be a function that takes one argument. Executes the function
+    |fn| on each element on the stack in the order they will be popped from the
+    stack. Returns void.
 
 *  `stack.map(fn) - O(N)`  
-    |fn| should be a function that takes one argument. Maps each element on the stack to the value returned by the function |fn|, when it is executed with that element as its argument. The order of execution is as foreach. Returns void.
+    |fn| should be a function that takes one argument. Maps each element on the
+    stack to the value returned by the function |fn|, when it is executed with
+    that element as its argument. The order of execution is as foreach. Returns 
+    void.
 
 *  `stack.toArray() - O(N)`  
-    Returns all the elements on the stack in an array. The elements are ordered by the order of their insertion.
+    Returns all the elements on the stack in an array. The elements are ordered
+    by the order of their insertion.
 
 #### 2. Queue
 
@@ -52,7 +61,8 @@
 ##### Methods:
 
 * `queue.enqueue(element) - O(1)`  
-  Inserts |element| at the back of the queue. Returns the number of elements in the queue after inserting |element|.
+  Inserts |element| at the back of the queue. Returns the number of elements in
+  the queue after inserting |element|.
  
 * `queue.dequeue() - amortized O(1)`  
   Removes and returns the element at the back of the queue. 
@@ -67,15 +77,72 @@
   Clears all elements from the queue.
 
 * `queue.front() - O(1)`  
-  Returns the element at the front of the queue if the queue is not empty, undefined otherwise.
+  Returns the element at the front of the queue if the queue is not empty,
+  undefined otherwise.
 
 * `queue.forEach(fn) - O(N)`  
-  |fn| should be a function that takes one argument. Executes the function |fn| on each element in the queue in the order they will be dequeued from the queue. Returns void.
+  |fn| should be a function that takes one argument. Executes the function
+  |fn| on each element in the queue in the order they will be dequeued from the
+  queue. Returns void.
 
 * `queue.map(fn) - O(N)`  
-  |fn| should be a function that takes one argument. Maps each element in the queue to the value returned by the function |fn|, when it is executed with that element as its argument. The order of execution is as foreach. Returns void.
+  |fn| should be a function that takes one argument. Maps each element in the
+  queue to the value returned by the function |fn|, when it is executed with 
+  that element as its argument. The order of execution is as foreach. Returns void.
 
 * `queue.toArray() - O(N)`  
-  Returns all the elements on the stack in an array. The elements are ordered by the order of their insertion.
+  Returns all the elements on the stack in an array. The elements are ordered by
+  the order of their insertion.
 
+#### 3. Linked List
+
+##### Usage:
+```
+  var Node = require('speedup').LinkedList.Node;
+  var node = new Node(3);
+
+  var LinkedList = require('speedup').LinkedList;
+  var linked_list = new LinkedList;
+```
+
+##### Methods:
+* `node.next()`
+  The element that is next to |node| in the linked list. null if |node| is the
+  last element in the list.
+
+* `node.previous()`
+  The element that is previous to |node| in the linked list. null if |node| is
+  the first element in the list.
+
+* `linked_list.head()`
+  First node in the linked list.
+
+* `linked_list.tail()`
+
+* `linked_list.insert(element, [index]) - O(1)`  
+  Inserts |element| at the end of the list if index is not given or inserts 
+  |element| at the given index |index|. insert() will fail and return undefined
+  if |index| is less than zero or |index| is greater than the size of the list.
+ 
+* `linked_list.insertAfter() - O(1)`  
+
+* `linked_list.insertBefore() - O(1)`  
+
+* `linked_list.elementAt(index) - O(1)`  
+* `linked_list.nodeAt() - O(1)`  
+
+* `linked_list.empty() - O(1)`  
+  Returns true if the queue contains no element, false otherwise.
+
+* `linked_list.size() - O(1)`  
+
+* `linked_list.clear() - O(1)`  
+
+* `linked_list.indexOf(obj) - O(N)`  
+
+#### 4. Heap
+
+#### 5. AVLTree
+
+#### 6. DisjointSet
 

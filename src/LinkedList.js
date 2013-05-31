@@ -1,21 +1,23 @@
 var assert = require("assert").ok;
 
+var Node = exports.Node = function Node(obj) {
+    this._prev = null;
+    this._next = null;
+    this.data = obj;
+};
+
+Node.prototype.previous = function () {
+    return this._prev;
+};
+
+Node.prototype.next = function () {
+    return this._next;
+});
+
 var LinkedList = module.exports = function LinkedList() {
     this._head = null;
     this._tail = null;
     this._size = 0;
-};
-
-var Node = exports.Node = function Node(obj) {
-    this._prev = null;
-    this._next = null;
-    this.__defineGetter__("prev", function () {
-        return this._prev;
-    });
-    this.__defineGetter__("next", function () {
-        return this._next;
-    });
-    this.data = obj;
 };
 
 // assume that typeof index is number.
@@ -23,7 +25,9 @@ var Node = exports.Node = function Node(obj) {
 LinkedList.prototype.insert = function (obj, index) {
     var node = this._createNodeIfNot(obj);
     index = index === undefined ? this._size : index;
-    assert(index <= this._size && index >= 0);
+    if (index > this._size || index < 0) {
+        return undefined;
+    }
 
     if (this._size === 0) {
         this._head = this._tail = node;
@@ -85,10 +89,9 @@ LinkedList.prototype.nodeAt = function (index) {
     }
 };
 
-LinkedList.prototype.__defineGetter__("size", function () {
+LinkedList.prototype.size = function () {
     return this._size;
 });
-
 
 LinkedList.prototype.clear = function () {
     this._head = null;

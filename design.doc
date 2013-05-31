@@ -1,0 +1,75 @@
+Objectives
+
+* very performant
+* functional.
+* minimalistic.
+* few/no dependencies.
+* tested
+* intuitive api.
+* no exceptions. (V8 doesn't optimize)
+
+* iterators
+  forward
+  backward
+
+
+* Disjoint Set
+  makeSet()
+  merge()
+* LinkedList
+** methods
+   insert
+   insertAfter
+   insertBefore
+
+   elementAt
+   NodeAt
+
+   remove
+
+   clear
+   empty
+
+iterater vs array (reverse iterate as well)   
+
+* Stack
+** methods  
+   push
+   pop
+   empty
+   clear
+   
+** attribute
+   size
+
+* Queue
+  push_back
+  pop_front
+  empty
+  toArray
+  clear
+
+  attributes:
+    front
+    back
+    size
+
+* Disjoint Set
+
+* BIT
+
+* Segment Tree
+
+* AVL Tree
+
+* BST
+
+* Set
+
+* Red Black Treeb
+  
+
+* Speed
+  | bitwise very fast
+  cache length inside loop
+  push vs setting element
